@@ -4,22 +4,40 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./index.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>My To Do List App</title>
   </head>
   <body>
-    <div class="js-clock">
-      <h1 class="js-title">00:00</h1>
+    <div class="js-container">
+      <div class="region top-bar"></div>
+      <span class="region middle-bar">
+        <div class="region left-bar"></div>
+        <div class="region center-bar">
+          <div class="js-clock">00:00</div>
+          <form class="js-form form">
+            <input class="input-name" type="text" placeholder="What's your name?" />
+          </form>
+          <div class="greeting">
+            <h3 class="js-greetings"></h3>
+          </div>
+          <form class="js-toDoForm">
+            <input class="input-toDos" type="text" placeholder="Write a to do" />
+          </form>
+          <div class="list-container">
+            <ul class="js-toDoList"></ul>
+          </div>
+        </div>
+        <div class="region right-bar"></div>
+      </span>
+
+      <div class="js-weather weather">
+        <span class="weather_text"></span>
+      </div>
+      <div class="js-location location">
+        <span class="location_text"></span>
+      </div>
     </div>
-    <form class="js-form form">
-      <input type="text" placeholder="What's your name?" />
-    </form>
-    <h4 class="js-greetings greeting"></h4>
-    <form class="js-toDoForm">
-      <input type="text" placeholder="Write a to do" />
-    </form>
-    <ul class="js-toDoList"></ul>
-    <span class="js-weather"></span>
+
     <script src="clock.js"></script>
     <script src="greeting.js"></script>
     <script src="todo.js"></script>

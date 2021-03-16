@@ -19,25 +19,31 @@ function saveToDos() {
 }
 
 function paintToDo(text) {
-  const li = document.createElement("li");
-  const delBtn = document.createElement("button");
-  const span = document.createElement("span");
-  const newId = toDos.length + 1;
+  if (toDos.length < 4) {
+    const li = document.createElement("li");
+    const delBtn = document.createElement("button");
+    const span = document.createElement("span");
+    const newId = toDos.length + 1;
 
-  delBtn.innerHTML = "❌";
-  delBtn.addEventListener("click", deleteToDo);
-  span.innerText = text;
-  li.appendChild(span);
-  li.appendChild(delBtn);
-  li.id = newId;
-  toDoList.appendChild(li);
+    delBtn.className = "list-btn";
+    delBtn.innerHTML = "x";
+    delBtn.addEventListener("click", deleteToDo);
+    span.innerText = text;
+    li.appendChild(span);
+    li.appendChild(delBtn);
+    li.id = newId;
+    toDoList.appendChild(li);
 
-  const toDoObj = {
-    text: text,
-    id: newId,
-  };
-  toDos.push(toDoObj);
-  saveToDos();
+    const toDoObj = {
+      text: text,
+      id: newId,
+    };
+
+    toDos.push(toDoObj);
+    saveToDos();
+  } else {
+    alert("Your list is Full!!");
+  }
 }
 
 function handleSubmit(event) {
